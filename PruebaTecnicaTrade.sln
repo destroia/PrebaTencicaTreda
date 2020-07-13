@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaTecnicaTrade", "PruebaTecnicaTrade\PruebaTecnicaTrade.csproj", "{07C25387-65FC-45B0-9523-AA65A3F0AFB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaTecnicaTrade", "PruebaTecnicaTrade\PruebaTecnicaTrade.csproj", "{07C25387-65FC-45B0-9523-AA65A3F0AFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaTecnicaTrade.Domain", "PruebaTecnicaTrade.Domain\PruebaTecnicaTrade.Domain.csproj", "{FDC82AA4-FCA9-4B2F-A7AE-692E92C7CF3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaTecnicaTrade.Data", "PruebaTecnicaTrade.Data\PruebaTecnicaTrade.Data.csproj", "{8F7A1C1D-9866-4E63-8A8A-C3B3D064DF8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{07C25387-65FC-45B0-9523-AA65A3F0AFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C25387-65FC-45B0-9523-AA65A3F0AFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07C25387-65FC-45B0-9523-AA65A3F0AFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC82AA4-FCA9-4B2F-A7AE-692E92C7CF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC82AA4-FCA9-4B2F-A7AE-692E92C7CF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC82AA4-FCA9-4B2F-A7AE-692E92C7CF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC82AA4-FCA9-4B2F-A7AE-692E92C7CF3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7A1C1D-9866-4E63-8A8A-C3B3D064DF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7A1C1D-9866-4E63-8A8A-C3B3D064DF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7A1C1D-9866-4E63-8A8A-C3B3D064DF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7A1C1D-9866-4E63-8A8A-C3B3D064DF8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
