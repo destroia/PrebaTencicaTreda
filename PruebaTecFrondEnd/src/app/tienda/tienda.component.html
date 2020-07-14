@@ -1,0 +1,92 @@
+<div>
+
+  <label>Nombre</label>
+  <input type="text" [(ngModel)]="nom" class="form-control" />
+
+  <label>Valor</label>
+  <input type="number" [(ngModel)]="valor" class="form-control" />
+
+  <label>Descripcion</label>
+  <input type="text" [(ngModel)]="descrip" class="form-control"/>
+
+
+  <label>Fecha</label>
+  <input type="date" [(ngModel)]="fecha" class="form-control"/>
+
+  <div class="col-md-3">
+    <input type="file" #file placeholder="Choose file" (change)="UpdateuploadFile(file.files)" style="display:none;">
+    <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+  </div>
+  <div *ngIf="visible" class="col-md-3 ">
+    <button (click)="CreatePor()"  class="btn btn-primary"> Crear Producto</button>
+
+
+  </div>
+ 
+  
+</div>
+
+
+
+<div class="table-responsive container">
+  <table class="table  table-striped">
+    <thead>
+      <tr class="table-striped ">
+        <th scope="col">Imagen</th>
+        <th scope="col">SUK</th>
+        <th scope="col">TiendaId</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Fecha</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let li of Productos" class="table-striped ">
+
+
+        <td><img src="data:image/png;base64,{{li.imagenBase64}}" height="100" /></td>
+        <td>{{li.sku}}</td>
+        <td>{{li.tiendaId}}</td>
+        <td>{{li.nombre}} </td>
+        <td>{{li.descripcion}}</td>
+        <td>{{li.valor}}</td>
+        <td>{{li.fecha|date:"fullDate"}}</td>
+
+        <td>
+          <div class="btn-group">
+            <button (click)="Detalles(li)" class="btn btn-primary" >Ir a la Tienda</button>
+            <button (click)="Borrar(li)" class="btn btn-secondary">Borrar</button>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="vis">
+  <h2>Editar Producto</h2>
+  <label>Nombre</label>
+  <input type="text" [(ngModel)]="nomE" class="form-control" />
+
+  <label>Valor</label>
+  <input type="number" [(ngModel)]="valorE" class="form-control" />
+
+  <label>Descripcion</label>
+  <input type="text" [(ngModel)]="descripE"  class="form-control"/>
+
+
+  <label>Fecha</label>
+  <input type="datetime" [(ngModel)]="fechaE" class="form-control"/>
+
+  <div class="col-md-3">
+    <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+    <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+  </div>
+  <button (click)="EditasPor()" class="btn btn-secondary"> Editar Producto</button>
+
+
+
+</div>
