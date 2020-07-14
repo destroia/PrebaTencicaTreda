@@ -32,6 +32,8 @@ namespace PruebaTecnicaTrade.Data.Repository
             }
         }
 
+
+        //dasdasd
         public async Task<IEnumerable<Producto>> GetProductos(Guid id)
         {
             try
