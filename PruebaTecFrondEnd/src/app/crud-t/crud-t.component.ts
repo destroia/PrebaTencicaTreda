@@ -37,9 +37,14 @@ export class CrudTComponent implements OnInit {
     };
     this.router.navigate(["Tienda"], navigationExtras);
   }
-  Borrar(li : Tienda) {
-
+  Borrar(li: Tienda) {
+    this.ServicesT.GetBorraT(li.id).subscribe(x => { this.BorrarConfirmar(x) }, e => console.log(e));
   }
+    BorrarConfirmar(x: boolean) {
+      if (x) {
+        this.ServicesT.GetTiendas().subscribe(x => { this.Confirmar(x) }, error => console.log(error));
+      }
+    }
   CrearTienda() {
     if (this.nom.length != 0 && this.fecha != "") {
       let tienda: any = {};

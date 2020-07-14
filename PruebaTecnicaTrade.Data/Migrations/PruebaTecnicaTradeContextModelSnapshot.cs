@@ -33,7 +33,6 @@ namespace PruebaTecnicaTrade.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Imagen")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")

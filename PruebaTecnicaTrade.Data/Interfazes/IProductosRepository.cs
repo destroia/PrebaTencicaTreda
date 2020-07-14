@@ -11,6 +11,6 @@ namespace PruebaTecnicaTrade.Data.Interfazes
         Task<bool> DeleteProducto(Guid id);
         Task<Producto> PostCreateProducto(Producto Producto);
         Task<bool> PostUpdateProducto(Producto Producto);
-        Task<IEnumerable<Producto>> GetProductos();
+        Task<IEnumerable<Producto>> GetProductos(Guid id);
     }
 }

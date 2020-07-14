@@ -19,4 +19,8 @@ export class TiendaServicesService {
   {
     return this.http.post<Tienda>(DiccionaryApiService.URL + DiccionaryApiService.PostCreateTienda, tienda);
   }
+  GetBorraT(id : string ): Observable<boolean> {
+
+    return this.http.get<boolean>(DiccionaryApiService.URL + DiccionaryApiService.GetDeleteTienda + id);
+  }
 }

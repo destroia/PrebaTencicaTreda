@@ -1,12 +1,14 @@
 
 
 
-<button (click)="CrearTienda()" class="btn btn-secondary"> Crear Tienda </button>
+
 <label>Nombre</label>
 <input type="text" [(ngModel)]="nom" class="form-control" />
 <label>Fecha</label>
 <input type="date" [(ngModel)]="fecha" class="form-control" />
-{{nom}}
+
+<button (click)="CrearTienda()" class="btn btn-secondary"> Crear Tienda </button>
+
 <div class="table-responsive ">
   <table class="table  table-striped">
     <thead>
@@ -25,8 +27,8 @@
 
         <td>
           <div class="btn-group">
-            <button (click)="IrTienda(li)" class="btn btn-primary">Llevar a Bodega</button>
-            <button (click)="Borrar(li)" class="btn btn-secondary">Detalles</button>
+            <button (click)="IrTienda(li)" class="btn btn-primary">Ir a la Tienda</button>
+            <button (click)="Borrar(li)" class="btn btn-secondary">Borrar</button>
           </div>
 
         </td>

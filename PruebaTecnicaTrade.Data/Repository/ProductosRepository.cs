@@ -3,8 +3,11 @@ using PruebaTecnicaTrade.Data.Interfazes;
 using PruebaTecnicaTrade.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace PruebaTecnicaTrade.Data.Repository
 {
@@ -29,12 +32,20 @@ namespace PruebaTecnicaTrade.Data.Repository
             }
         }
 
-        public async Task<IEnumerable<Producto>> GetProductos()
+        public async Task<IEnumerable<Producto>> GetProductos(Guid id)
         {
             try
             {
-                var LP = await DB.Productos.ToListAsync();
+                var LP = await DB.Productos.Where( x => x.TiendaId == id).ToListAsync();
 
+                foreach (var item in LP)
+                {
+                    var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), item.Imagen);
+
+                    byte[] imageArray = System.IO.File.ReadAllBytes(pathToSave);
+                    string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+                    item.ImagenBase64 = base64ImageRepresentation;
+                }
                 return LP;
             }
             catch (Exception)
