@@ -1,0 +1,36 @@
+
+
+
+<button (click)="CrearTienda()" class="btn btn-secondary"> Crear Tienda </button>
+<label>Nombre</label>
+<input type="text" [(ngModel)]="nom" class="form-control" />
+<label>Fecha</label>
+<input type="date" [(ngModel)]="fecha" class="form-control" />
+{{nom}}
+<div class="table-responsive ">
+  <table class="table  table-striped">
+    <thead>
+      <tr class="table-striped ">
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let li of Tiendas" class="table-striped ">
+        <td>{{li.id}}</td>
+        <td>{{li.nombre}} </td>
+        <td>{{li.fecha|date:"fullDate"}}</td>
+
+        <td>
+          <div class="btn-group">
+            <button (click)="IrTienda(li)" class="btn btn-primary">Llevar a Bodega</button>
+            <button (click)="Borrar(li)" class="btn btn-secondary">Detalles</button>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
